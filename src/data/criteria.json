@@ -1,0 +1,101 @@
+[
+    {
+        "rows": [
+            {
+                "display": "Summons",
+                "filter": "CanSummon"
+            }
+        ]
+    },
+    {
+        "cols": [
+            {
+                "display": "Magic"
+            },
+            {
+                "display": "Skull"
+            }
+        ],
+        "rows": [
+            {
+                "filter": "Resistance"
+            }
+        ]
+    },
+    {
+        "cols": [
+            {
+                "display": "Causes"
+            },
+            {
+                "display": "Immune",
+                "filter": "ImmuneTo"
+            }
+        ],
+        "rows": [
+            {
+                "filter": "Entangle"
+            },
+            {
+                "filter": "Burning"
+            },
+            {
+                "filter":"Poison"
+            },
+            {
+                "filter":"Silence"
+            },
+            {
+                "display": "Hunters Mark",
+                "filter":"HuntersMark"
+            },
+            {
+                "display":"Spell Disabled",
+                "filter":"SpellDisabled"
+            },
+            {
+                "filter":"Barrier"
+            },
+            {
+                "filter":"Frozen"
+            },
+            {
+                "filter":"DeathMark"
+            },
+            {
+                "filter":"Disease"
+            },
+            {
+                "filter":"Stun"
+            },
+            {
+                "filter":"Web"
+            },
+            {
+                "filter":"Enchanted"
+            },
+            {
+                "filter":"Enraged"
+            },
+            {
+                "filter":"Submerged"
+            },
+            {
+                "display":"Faerie Fire",
+                "filter":"FaerieFire"
+            },
+            {
+                "filter":"Blessed"
+            },
+            {
+                "filter":"Cursed"
+            },
+            {
+                "filter":"Bleed"
+            },
+            {
+                "filter":"Mirror"
+            }
+        ]
+    }
+]

@@ -1,17 +1,20 @@
 import React, { Fragment } from 'react';
-import Criterion from './filter';
+import Criterion from './criterion';
 
 export default class CommandCentre extends React.Component {
   constructor(props) {
     super(props);
 
+    const { filters } = this.props;
+
     this.onChange = this.onChange.bind(this);
-    this.state = { filters: [] };
+    this.state = { filters };
   }
 
   onChange(checked, filter) {
-    const action = checked ? fs => fs.concat(filter) : fs => fs.filter(k => k !== filter);
-    this.setState(prev => ({ filters: action(prev.filters) }), () => this.props.onChange(this.state.filters));
+    let filters = Object.assign(this.state.filters, {});
+    filters[filter] = checked;
+    this.props.onChange(filters);
   }
 
   render() {
@@ -47,10 +50,10 @@ export default class CommandCentre extends React.Component {
         </div>
         {
           [
-            'Entangle',      'Burning', 'Poison',    'Silence',   'HuntersMark',
-            'SpellDisabled', 'Barrier', 'Frozen',    'DeathMark', 'Disease',
-            'Stun',          'Web',     'Enchanted', 'Enraged',   'Submerged',
-            'FaerieFire',    'Blessed', 'Cursed',    'Bleed',     'Mirror'
+            'Entangle', 'Burning', 'Poison', 'Silence', 'HuntersMark',
+            'SpellDisabled', 'Barrier', 'Frozen', 'DeathMark', 'Disease',
+            'Stun', 'Web', 'Enchanted', 'Enraged', 'Submerged',
+            'FaerieFire', 'Blessed', 'Cursed', 'Bleed', 'Mirror'
           ].map(se => (
             <Fragment>
               <div className="row">

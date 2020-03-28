@@ -4,7 +4,7 @@ import kingdoms from '../data/kingdoms.json';
 
 export default class KingdomTable extends React.Component {
   getRows() {
-    const filters = this.props.filters.reduce((fs, f) => { fs[f] = true; return fs }, {});
+    const { filters } = this.props;
     return _.sortBy(kingdoms.map(k => this.getRow(k, filters)), [
       r => -r.compatibility,
       r => r.name
