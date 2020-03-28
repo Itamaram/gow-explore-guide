@@ -9,11 +9,11 @@ export default class CriteriaTable extends React.Component {
   }
 
   onChange() {
-    this.props.apply(null, arguments);
+    this.props.onChange.apply(null, arguments);
   }
 
   getHeader() {
-    const { cols } = this.props;
+    const { cols } = this.props.criteria;
 
     if (!cols)
       return;
@@ -29,19 +29,19 @@ export default class CriteriaTable extends React.Component {
   }
 
   getRowCells(row) {
-    let { cols } = this.props;
+    let { cols } = this.props.criteria;
 
     cols = cols || [{ filter: '' }];
 
     return cols.map(c => (
       <div className="col">
-        <Criterion filters={this.props.filters} name={`${c.filter}${row.filter}`} onToggle={this.onChange} />)
+        <Criterion filters={this.props.filters} name={`${c.filter}${row.filter}`} onToggle={this.onChange} />
       </div>
     ));
   }
 
   getRows() {
-    const { rows } = this.props;
+    const { rows } = this.props.criteria;
 
     return rows.map(r => (
       <div className="row">
