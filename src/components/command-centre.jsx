@@ -6,14 +6,11 @@ export default class CommandCentre extends React.Component {
   constructor(props) {
     super(props);
 
-    const { filters } = this.props;
-
     this.onChange = this.onChange.bind(this);
-    this.state = { filters };
   }
 
   onChange(checked, filter) {
-    let filters = Object.assign(this.state.filters, {});
+    let filters = Object.assign(this.props.filters, {});
     filters[filter] = checked;
     this.props.onChange(filters);
   }
@@ -22,7 +19,7 @@ export default class CommandCentre extends React.Component {
     return (
       <div className="container">
         {criteria.map(c => (
-          <CriteriaTable criteria={c} filters={this.state.filters} onChange={this.onChange} />
+          <CriteriaTable criteria={c} filters={this.props.filters} onChange={this.onChange} />
         )).reduce((x,y) => [x,(<hr />),y])}
       </div>
     );

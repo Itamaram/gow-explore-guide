@@ -34,8 +34,8 @@ export default class CriteriaTable extends React.Component {
     cols = cols || [{ filter: '' }];
 
     return cols.map(c => (
-      <div className="col">
-        <Criterion filters={this.props.filters} name={`${c.filter}${row.filter}`} onToggle={this.onChange} />
+      <div className="col-4">
+        <Criterion filters={this.props.filters} name={`${c.filter}${row.filter}`} onChange={this.onChange} />
       </div>
     ));
   }
@@ -45,7 +45,7 @@ export default class CriteriaTable extends React.Component {
 
     return rows.map(r => (
       <div className="row">
-        <div className="col">{r.display || r.filter}</div>
+        <div className="col-4">{r.display || r.filter}</div>
         {this.getRowCells(r)}
       </div>
     ));

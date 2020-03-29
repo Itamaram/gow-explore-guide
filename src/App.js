@@ -19,10 +19,10 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-12 col-sm-6">
             <CommandCentre onChange={this.onChange} filters={this.state.filters} />
           </div>
-          <div className="col">
+          <div className="col-12 col-sm-6">
             <KingdomTable filters={this.state.filters} />
           </div>
         </div>

@@ -21,9 +21,10 @@ export default class KingdomTable extends React.Component {
   }
 
   getRowStyle(compatibility) {
+    const good = {r: 119, g: 221, b: 119}, bad = {r: 255, g: 105, b: 97};
     const c = (x, y) => Math.ceil((y - x) * compatibility + x);
     return {
-      backgroundColor: `rgb(${c(255, 0)}, ${c(0, 255)}, 0)`
+      backgroundColor: `rgb(${c(bad.r, good.r)}, ${c(bad.g, good.g)}, ${c(bad.b, good.b)})`
     }
 
   }

@@ -8,7 +8,7 @@ export default class Criterion extends React.Component {
   }
 
   onChange(e) {
-    this.props.onToggle(e.target.checked, this.props.name);
+    this.props.onChange(e.target.checked, this.props.name);
   }
 
   render() {
